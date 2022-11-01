@@ -67,8 +67,8 @@ console.log(paginatedData)
                           <div className='col-md-12 d-flex flex-wrap'>
                           {
                       paginatedData?.map((data)=>(
-                        <div className='col-md-6 col-12 '>
-                            <div key={data.title} className='contentcard '>
+                        <div key={data.title} className='col-md-6 col-12 '>
+                            <div  className='contentcard '>
                             <div className='col-md-12 col-12 '>
                             <img className='image rounded' src={data.urlToImage}  alt={data.title}  />
 
