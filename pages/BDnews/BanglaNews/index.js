@@ -4,7 +4,7 @@ import {FaArrowAltCircleLeft} from 'react-icons/fa';
 import { useRouter } from 'next/router';
 
 
-const Read = () => {
+const Bangla = () => {
   const router = useRouter();
   return (
     <div>
@@ -14,9 +14,8 @@ const Read = () => {
 
 
 
-<Link href='/BDnews/BanglaNews'><div className="btn btn-light m-3 p-5 button">বাংলা সংবাদ</div></Link>
-<Link href='/BDnews/English'><div className="btn btn-light m-3 p-5 button">English News Of Bangladesh</div></Link>
-<Link href='/TopNews/World'><div className="btn btn-light m-3 p-5 button">Top World News</div></Link>
+<Link href='/BDnews/BanglaNews/ঢাকা'><div className="btn btn-light m-3 p-5 button">বিভাগ অনুযায়ী</div></Link>
+<Link href='/BDnews/BanglaCat/খেলাধুলা'><div className="btn btn-light m-3 p-5 button">বিষয় অনুযায়ী</div></Link>
 
 
 
@@ -25,4 +24,4 @@ const Read = () => {
   )
 }
 
-export default Read
+export default Bangla

@@ -230,7 +230,10 @@ export async function getServerSideProps(context) {
         },
         headers: {
           'X-RapidAPI-Key': '0ea5875e08msh2ec564c6381f6e8p10c302jsn3dbc1337386d',
-          'X-RapidAPI-Host': 'newscatcher.p.rapidapi.com'
+          'X-RapidAPI-Host': 'newscatcher.p.rapidapi.com',
+          'cache-control' : 'no-cache',
+          'pragma' : 'no-cache',
+          'expires' : '0'
         }
 
     })

@@ -39,7 +39,7 @@ const paginatedData = bdNewsData.slice(indexOfFirstPost, indexOfLastPost);
 
 const paginate = pageNumber => setCurrentPage(pageNumber);
 
-
+console.log(paginatedData)
   return (
     <>
        <Head>
@@ -59,33 +59,29 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
         </div>
         </div>
       </div>
-      
-      <div className=''>
-     
-      
-        
-      </div>
-   
-
-        
-        <div>
-        {
+    
+<div className='container-fluid'>
+  
+    <div className=''>
+    <div className='row ' >
+                          <div className='col-md-12 d-flex flex-wrap'>
+                          {
                       paginatedData?.map((data)=>(
-                        <div className='contentcard col-12' key={data.title}>
-                          <div className='content '>
-                            <div className='col-md-12  d-md-flex '>
-                            <div className='col-md-4 col-12 d-md-flex justify-content-center align-items-center'>
+                        <div className='col-md-6 col-12 '>
+                            <div key={data.title} className='contentcard '>
+                            <div className='col-md-12 col-12 '>
                             <img className='image rounded' src={data.urlToImage}  alt={data.title}  />
 
                             </div>
-                            <div className='col-md-8 col-12'>
+                            <div className='col-md-12 col-12'>
                             <div className='maincontent'>
                                 <div >
-                                <h4 className='contenttitle mb-2 d-flex justify-content-center align-items-center'>{data.title}</h4>
-                                <p className='contentpara'>{data.description}. . . . .</p>
+                                <h4 className='contenttitle m-2 d-flex justify-content-center align-items-center'>{data.title}</h4>
+                               
                                
 
                                 </div>
+                                <div>{data.description}<a href={data.url}><strong>............</strong></a></div>
                                 
     
                                 {
@@ -126,11 +122,11 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                                <div className='col-md-12'>
                                   <h4 className='contentparatitle'>Share this News</h4>
                                   <div className='sharebutton'>
-                                <FacebookShareButton url={data.link}><FacebookIcon/></FacebookShareButton>
-                                <FacebookMessengerShareButton url={data.link} appId='611096880759273'><FacebookMessengerIcon/></FacebookMessengerShareButton>              
-                                <WhatsappShareButton url={data.link} title={`TITLE : ${data.title}`}><WhatsappIcon/></WhatsappShareButton>
-                                <TwitterShareButton url={data.link} title={`TITLE : ${data.title}`} ><TwitterIcon/></TwitterShareButton>
-                                <TelegramShareButton url={data.link} title={`TITLE : ${data.title}`}><TelegramIcon/></TelegramShareButton>
+                                <FacebookShareButton url={data.url}><FacebookIcon/></FacebookShareButton>
+                                <FacebookMessengerShareButton url={data.url} appId='611096880759273'><FacebookMessengerIcon/></FacebookMessengerShareButton>              
+                                <WhatsappShareButton url={data.url} title={`TITLE : ${data.title}`}><WhatsappIcon/></WhatsappShareButton>
+                                <TwitterShareButton url={data.url} title={`TITLE : ${data.title}`} ><TwitterIcon/></TwitterShareButton>
+                                <TelegramShareButton url={data.url} title={`TITLE : ${data.title}`}><TelegramIcon/></TelegramShareButton>
                                 </div>
                             </div>
                            
@@ -144,6 +140,11 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                             </div>
 
                             </div>
+
+
+                        </div>
+                          
+                        ))}
                            
                             
                           
@@ -159,8 +160,11 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                             
 
                         </div>
+
+    </div>
+    
+                       
                          
-                        ))}
                          {
       Loading ? <h1 className='modu'><LoAding/></h1> : <div></div>
      }
@@ -182,7 +186,13 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                         </div>
                         
                         
-        </div>
+        
+
+  
+
+</div>
+        
+        
     </>
   )
 }

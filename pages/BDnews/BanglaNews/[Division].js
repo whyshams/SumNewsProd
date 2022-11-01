@@ -132,90 +132,99 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
 
     
        <section>
-       <div className='second'>
+       
           
-          <div>
-          <div>
+          
+            <div className='container-fluid'>
+              <div className='row '>
+              <div className='col-md-12 d-flex flex-wrap'>
               
-          {
-      paginatedData?.map((data)=>(
-        <div key={data.title} className='contentcard col-12'>
-          
-          <div  className='row col-md-12 '>
-          <div className='col-md-4 col-12'>
-            
-            <img className='rounded image ' src={data.media} alt={data.title}/>
-  
-          </div>
-          <div className='col-md-8 '>
-          <div className='col-12 maincontent'>
-            <h3 className='contenttitle fontFat mb-2 d-flex justify-content-center align-items-center'>{data.title}</h3>
-            
-            
-            
-               <div><p className='contentpara'><strong className='contentparatitle'>Description :</strong> {data.summary.split(" ").splice(0,40).join(" ")}</p></div>
-            
-            
-            
-  
-            <div className='d-block m-5'>
-              <h5 className='  m-2 contentparatitle  d-flex justify-content-center align-items-center' >{moment(data.published_date).fromNow()}</h5> 
-              <div className=' d-flex justify-content-center align-items-center'>
-              <h6 >by </h6>
-  
+              {
+          paginatedData?.map((data)=>(
+            <div key={data.title} className=' col-md-6 col-12 '>
+              <div className='m-3'>
+              <div  className='row col-md-12 contentcard rounded '>
+              <div className='col-md-12 col-12'>
+                
+                <img className='rounded image ' src={data.media} alt={data.title}/>
+      
               </div>
-              <div className='d-flex justify-content-center align-items-center'>
-              <p className='sourcename'>{data.rights.toUpperCase()}</p>
-              </div>
-            </div>
-             
-            
-            <div className='row contentbutton'>
-                                        
-                                        
-                                        
-                                   
-                                <div className=' col-12 col-md-12 d-flex d-md-flex justify-content-center'>
-                                <a target="_blank" rel="noreferrer" className=' btn  button btn-light m-3' href={data.link}>Read Full News</a>
-                                
-                                <CopyToClipboard text={data.media} >
+              <div className='col-md-12 col-12 '>
+              <div className=' maincontent'>
+                <h3 className='contenttitle fontFat mb-2 d-flex justify-content-center align-items-center'>{data.title}</h3>
+                
+                
+                
+                <div><p className='contentpara'><strong className='contentparatitle'>Description :</strong> {data.summary.split(" ").splice(0,40).join(" ")}</p></div>
+                {/*  */}   
+                
+                
+                
+      
+                <div className='d-block m-5'>
+                  <h5 className='  m-2 contentparatitle  d-flex justify-content-center align-items-center' >{moment(data.published_date).fromNow()}</h5> 
+                  <div className=' d-flex justify-content-center align-items-center'>
+                  <h6 >by </h6>
+      
+                  </div>
+                  <div className='d-flex justify-content-center align-items-center'>
+                  <p className='sourcename'>{data.rights.toUpperCase()}</p>
+                  </div>
+                </div>
+                 
+                
+                <div className='row contentbutton'>
+                                            
+                                            
+                                            
                                        
-                                <div className=' button btn btn-light m-3'><Link href='/EditImage/Editor'>Copy Image Link </Link></div>
-
-                                </CopyToClipboard>
-                                                                          
-  
+                                    <div className=' col-12 col-md-12 d-flex d-md-flex justify-content-center'>
+                                    <a target="_blank" rel="noreferrer" className=' btn  button btn-light m-3' href={data.link}>Read Full News</a>
+                                    
+                                    <CopyToClipboard text={data.media} >
+                                           
+                                    <div className=' button btn btn-light m-3'><Link href='/EditImage/Editor'>Copy Image Link </Link></div>
+    
+                                    </CopyToClipboard>
+                                                                              
+      
+                                    </div>
+                                    <div className='col-md-12'>
+                                      <h4 className='contentparatitle'>Share this News</h4>
+                                      <div className='sharebutton'>
+                                    <FacebookShareButton url={data.link}><FacebookIcon/></FacebookShareButton>
+                                    <FacebookMessengerShareButton url={data.link} appId='611096880759273'><FacebookMessengerIcon/></FacebookMessengerShareButton>              
+                                    <WhatsappShareButton url={data.link} title={`TITLE : ${data.title}`}><WhatsappIcon/></WhatsappShareButton>
+                                    <TwitterShareButton url={data.link} title={`TITLE : ${data.title}`} ><TwitterIcon/></TwitterShareButton>
+                                    <TelegramShareButton url={data.link} title={`TITLE : ${data.title}`}><TelegramIcon/></TelegramShareButton>
+                                    </div>
                                 </div>
-                                <div className='col-md-12'>
-                                  <h4 className='contentparatitle'>Share this News</h4>
-                                  <div className='sharebutton'>
-                                <FacebookShareButton url={data.link}><FacebookIcon/></FacebookShareButton>
-                                <FacebookMessengerShareButton url={data.link} appId='611096880759273'><FacebookMessengerIcon/></FacebookMessengerShareButton>              
-                                <WhatsappShareButton url={data.link} title={`TITLE : ${data.title}`}><WhatsappIcon/></WhatsappShareButton>
-                                <TwitterShareButton url={data.link} title={`TITLE : ${data.title}`} ><TwitterIcon/></TwitterShareButton>
-                                <TelegramShareButton url={data.link} title={`TITLE : ${data.title}`}><TelegramIcon/></TelegramShareButton>
-                                </div>
-                            </div>
-
-                                 </div>
-  
-          <hr/>
-  
-            </div>
+    
+                                     </div>
+      
+              <hr/>
+      
+                </div>
+                
+      
+      
+              </div>
             
-  
-  
-          </div>
-        
-  
-  </div>
-  
-        </div>
-        
-          
-         
-      ))}
-          </div>
+      
+      </div>
+
+              </div>
+              
+   
+      
+            </div>   
+          ))}
+              </div>
+
+              </div>
+
+            
+    
           
       <hr className='text-muted'/>
 
@@ -235,7 +244,7 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
        
           </div>
   
-          </div>
+          
 
        </section>
        

@@ -137,23 +137,23 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
 
     
        <section>
-       <div className='second'>
+       <div className='container-fluid'>
           
-          <div>
-          <div>
+          <div className='row'>
+          <div className='col-md-12 d-flex flex-wrap'>
               
           {
       paginatedData?.map((data)=>(
-        <div key={data.title} className='contentcard col-12'>
-          
-          <div  className='row col-md-12 '>
-          <div className='col-md-4 col-12'>
+        <div key={data.title} className='col-md-6 col-12'>
+          <div className='m-3'>
+          <div  className='row col-md-12 contentcard'>
+          <div className='col-md-12 col-12'>
             
             <img className='rounded image ' src={data.media} alt={data.title}/>
   
           </div>
-          <div className='col-md-8 '>
-          <div className='col-12 maincontent'>
+          <div className='col-md-12 col-12'>
+          <div className=' maincontent'>
             <h3 className='contenttitle fontFat mb-2 d-flex justify-content-center align-items-center'>{data.title}</h3>
             
             
@@ -214,6 +214,10 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
         
   
   </div>
+
+          </div>
+          
+      
   
         </div>
         
