@@ -1,11 +1,10 @@
-
-
 import React,{useEffect} from 'react';
-import Parser from 'html-react-parser';
 import { useRouter } from 'next/router';
+import Parser from 'html-react-parser';
+
 import {FaArrowAltCircleLeft,FaHome} from 'react-icons/fa';
 
-const index = ({body}) => {
+const Slug = ({body}) => {
   
   const router = useRouter();
 
@@ -27,7 +26,7 @@ const index = ({body}) => {
       <div>
       {body.map((data) => (
         data.children.map(d => (
-            <div>{Parser(d.text)}</div>
+            <div key={d.text}>{Parser(d.text)}</div>
         ))
       ))}
       </div>
@@ -35,7 +34,7 @@ const index = ({body}) => {
   )
 }
 
-export default index
+export default Slug
 
 export async function getServerSideProps(context){
     const {params} = context;

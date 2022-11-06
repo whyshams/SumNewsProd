@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import Link from 'next/link';
 import  imageUrlBuilder  from '@sanity/image-url';
 
-const index = ({res,image}) => {
+const Index = ({res,image}) => {
 const [mapedData,setMapedData] = useState([]);
 
 useEffect(() => {
@@ -41,7 +41,7 @@ console.log(mapedData)
   )
 }
 
-export default index
+export default Index
 
 export async function getServerSideProps(){
     const query = encodeURIComponent(`*[_type == "banglapaper"]`)
