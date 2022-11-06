@@ -10,7 +10,9 @@
     "sitemap": "next-sitemap --config next-sitemap.config.js"
   },
   "dependencies": {
+    "@sanity/image-url": "^1.0.1",
     "axios": "^0.27.2",
+    "html-react-parser": "^3.0.4",
     "moment": "^2.29.4",
     "next": "12.2.5",
     "next-pwa": "^5.6.0",

@@ -273,6 +273,9 @@ export async function getServerSideProps(context) {
           media: 'True'
         },
         headers: {
+          'Cache-Control': 'no-cache',
+      'Pragma': 'no-cache',
+      'Expires': '0',
           'X-RapidAPI-Key': '3c84603cf9msh4143e6aff6a8074p1c4935jsnf23b029efa30',
           'X-RapidAPI-Host': 'newscatcher.p.rapidapi.com'
         }

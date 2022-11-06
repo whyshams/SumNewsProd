@@ -17,8 +17,10 @@ const AboutUs = () => {
                 <p className='mt-2'>Here, you can find any News from around the world from the best News agencies of the world and summarize them in a click in a 4-5 line summarization of the context of the whole news or article. It also very simple to share any news from Sumnews with your friends through clicking the social media buttons below every news. </p>
                 <p className='mt-2'> You can keep yourself up to date with the current affairs of Bangladesh. Firstly, from the Local English News agencies and secondly, Bangla news from the top news portals of the country. Be it according to your choice of Topic or regional Divisions.</p>
           </div>
+          
 
         </div>
+        
     </>
   )
 }

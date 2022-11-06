@@ -32,8 +32,10 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
  }
 
     const  getData = async () => {
-        setLoading(true)
-        await axios.request(
+        
+        
+      
+       await axios.request(
             {
                 method: 'GET',
                 url: 'https://newscatcher.p.rapidapi.com/v1/search_enterprise',
@@ -44,6 +46,9 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                 }
             }
         ).then(res => setData(res.data.articles)).catch(err => {setError(true) ; console.log(err)}).finally(() =>{setLoading(false);setClear(true)})
+      
+    
+       
     }
 
   useEffect(() => {

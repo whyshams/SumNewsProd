@@ -16,7 +16,9 @@ const Read = () => {
 
 <Link href='/BDnews/BanglaNews'><div className="btn btn-light m-3 p-5 button">বাংলা সংবাদ</div></Link>
 <Link href='/BDnews/English'><div className="btn btn-light m-3 p-5 button">English News Of Bangladesh</div></Link>
-<Link href='/TopNews/World'><div className="btn btn-light m-3 p-5 button">Top World News</div></Link>
+<Link href='/Newspapers'><div className="btn btn-light m-3 p-5 button">Top Newspapers Of Bangladesh</div></Link>
+<Link href='/TopNews/World'><div className="btn btn-light m-3 p-5 button">Latest World News</div></Link>
+
 
 
 

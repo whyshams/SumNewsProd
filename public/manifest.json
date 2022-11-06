@@ -7,6 +7,9 @@
     "name": "SumNews",
     "short_name": "SumNews",
     "description": "A news aggregator that creates content",
+    "devIndicators": {
+        "autoPrerender": false
+      },
     "icons": [
         {
             "src": "/icon-192x192.png",

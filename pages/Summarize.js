@@ -37,14 +37,14 @@ const Summarize = () => {
       
       </div>
         
-          <div className='contentcard fullscreen rounded d-flex justify-content-center align-items-center'>
+          <div className='m-2 contentcard fullscreen rounded d-flex justify-content-center align-items-center'>
             <div className=''>
             <div className='col-12 d-block ' >
 
              <form onSubmit={handleSubmit} >
             <div className='mb-5 contentparatitle d-flex justify-content-center align-items-center text-muted '>Submit any English news or article Link in that input field to get summarized version of that news</div> 
 
-                      <div className=' text-center '>
+                      <div className=' d-flex justify-content-center align-items-center '>
                           <input className='form-control summaryinput ' placeholder='Input LINK for Summarization...' type="text" value={sumText} onChange={(e)=>setSumText(e.target.value)} />
                       </div>
                       <div className='text-center d-flex justify-content-center align-items-center m-3 '>

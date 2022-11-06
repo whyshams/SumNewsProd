@@ -95,9 +95,7 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
             
             
             </select>
-          <button className='btn selectbutton btn-light' type='submit'>Submit</button>
-
-
+            <button className='btn selectbutton btn-light' type='submit'>Submit</button>
             </label>
        
 

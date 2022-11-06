@@ -25,7 +25,7 @@ const Menu = ({menuOpen,setMenuOpen}) => {
                     <div className='logo'>
                     <Link href='/'>
 
-                      <img src='/logo.png' />
+                      <img className='image' src='/logo.png' />
                     </Link>
 
                    </div>
@@ -44,6 +44,7 @@ const Menu = ({menuOpen,setMenuOpen}) => {
 <Link href="/BDnews">
 <div className='btn btn-light m-3 p-5 button' onClick={() => setMenuOpen(!menuOpen)}>
  Bangladesh News</div></Link>
+ <Link onClick={() => setMenuOpen(!menuOpen)} href='/Newspapers'><div className="btn btn-light m-3 p-5 button">Top Newspapers Of Bangladesh</div></Link>
 
 
    <Link href="/Summarize">
@@ -56,6 +57,7 @@ const Menu = ({menuOpen,setMenuOpen}) => {
 <Link href="/EditImage">
 <div onClick={() => setMenuOpen(!menuOpen)} className='btn btn-light m-3 p-5 button'>
        Image Editor</div></Link>
+
        
 
 

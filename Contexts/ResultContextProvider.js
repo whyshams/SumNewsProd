@@ -8,6 +8,8 @@ const ResultContext = createContext();
 
 export default function ResultContextProvider  ({children})  {
 
+  const [browserUrl,setBrowserUrl] = useState('http://sumnewsbd.com/BDnews/Categorical/news');
+
   const[searchTerm, setSearchTerm] = useState('');
   const [searchText,setSearchText] = useState('')
 
@@ -105,7 +107,7 @@ export default function ResultContextProvider  ({children})  {
 
 
   return (
-    <ResultContext.Provider value={{searchTerm, setSearchTerm,searchText,setSearchText,setMenuOpen,menuOpen,mobile,setMobile,text, setText,image, setImage,Loading,setLoading,sumError,bdNewsData,setBdNewsData,bdNewsDataDiv,setBdNewsDataDiv,catData,setCatData,sumData, setSumData,sumInput,setSumInput,sumText,setSumText,copied,setCopied,bdNewsDataCat, setBdNewsDataCat,setDirectsumInput,directSumData,setDirectSumData,clear,setClear}}>
+    <ResultContext.Provider value={{browserUrl,setBrowserUrl,searchTerm, setSearchTerm,searchText,setSearchText,setMenuOpen,menuOpen,mobile,setMobile,text, setText,image, setImage,Loading,setLoading,sumError,bdNewsData,setBdNewsData,bdNewsDataDiv,setBdNewsDataDiv,catData,setCatData,sumData, setSumData,sumInput,setSumInput,sumText,setSumText,copied,setCopied,bdNewsDataCat, setBdNewsDataCat,setDirectsumInput,directSumData,setDirectSumData,clear,setClear}}>
           {children}
         </ResultContext.Provider>
   )
