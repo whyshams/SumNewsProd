@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const HomePagi = ({ postsPerPage, totalPosts, paginate }) => {
+const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
     const pageNumbers = [];
   
     for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
@@ -10,7 +10,7 @@ const HomePagi = ({ postsPerPage, totalPosts, paginate }) => {
   
     const handleClick = () => {
       setClicked(!clicked)
-      window.scrollTo(0,350)
+      window.scrollTo(0,900)
     }
   
     return (
@@ -28,4 +28,4 @@ const HomePagi = ({ postsPerPage, totalPosts, paginate }) => {
     );
   };
 
-export default HomePagi
+export default Pagination

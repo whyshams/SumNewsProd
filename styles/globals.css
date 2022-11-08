@@ -2,6 +2,45 @@
   font-family: 'Poppins',sans-serif;
  
 }
+.m1{
+  margin: 10px;
+}
+.singleimage{
+ height : 400px;
+ width: 740px;
+}
+.m2{
+  margin: 20px;
+}
+.courierprime{
+  font-family: 'Courier Prime', monospace;
+
+}
+.commentname{
+  margin-right: 30px;
+}
+figure img{
+  width: 720px;
+  height: 318px ;
+ 
+  
+}
+.writer h4{
+  font-size: 16px;
+  color: white;
+}
+figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.prime{
+  font-family: 'Courier Prime', monospace;
+  font-size: 50px;
+  font-weight: 700;
+  color: white;
+}
+
 iframe{
   display: block; /* Hidden by default */
   
@@ -222,8 +261,10 @@ footer{
   color: white;
 
 }
+
 .fullscreen{
-  min-height: 70vh;
+  min-height: 100vh;
+  
 }
 .summaryinput{
   width: 650px;
@@ -363,6 +404,7 @@ footer{
       align-items: center;
 
     }
+    
     .image{
       height: auto;
       width: 100%;
@@ -372,12 +414,40 @@ footer{
       margin-bottom: 20px;
       
     }
+    .prime{
+      font-size: 35px;
+    }
    .frontbtn{
     padding: 10px 70px;
    }
+   .m1{
+    margin: 4px;
+  }
+  .m1 h2{
+    font-size: 16px;
+  }
+  .m1 p{
+    font-size: 9px;
+    
+  }
+  .m1 h4{
+    font-size: 19px;
+    font-style: italic;
+  }
+  .m1 small{
+    font-size: 7px;
+    
+  }
+  .m2{
+    margin: 8px;
+    margin-top: 16px;
+  }
     .sumimage{
       height: auto;
       width: 100%;
+    }
+    small{
+      font-size: 10px;
     }
     .contenttitle{
       margin-top: 20px;
@@ -393,7 +463,15 @@ footer{
       width: 250px;
       padding: 40px;
     }
+    figure img{
+      height: auto;
+      width: 100%;
+    }
     .summaryinput{
       width: 300px;
+    }
+    .singleimage{
+      height: auto;
+      width: 100%;
     }
   }

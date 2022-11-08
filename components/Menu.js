@@ -54,13 +54,6 @@ const Menu = ({menuOpen,setMenuOpen}) => {
      
        <Link href="/Search">
 <div onClick={() => setMenuOpen(!menuOpen)} className='btn btn-light m-3 p-5 button'>Search News</div></Link>
-<Link href="/EditImage">
-<div onClick={() => setMenuOpen(!menuOpen)} className='btn btn-light m-3 p-5 button'>
-       Image Editor</div></Link>
-
-       
-
-
     </div>
  
   </nav>

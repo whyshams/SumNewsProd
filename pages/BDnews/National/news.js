@@ -1,145 +1,114 @@
-import {useState,useEffect} from 'react'
+import {useEffect, useState} from 'react';
 import axios from 'axios';
 import moment from 'moment';
-import {useRouter} from 'next/router'
+import { useRouter } from 'next/router';
 import { useResultContext } from '../../../Contexts/ResultContextProvider';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-
 import {FaAngleDown,FaArrowAltCircleLeft} from 'react-icons/fa';
-import { IconContext } from "react-icons";
-import Head from 'next/head';
-import Summary from '../../../components/Summary';
 
+import Head from 'next/head';
 import Pagination from '../../../components/Pagination';
+import Summary from '../../../components/Summary';
 import LoAding from '../../../components/LoAding';
+import Link from 'next/link';
 import {FacebookShareButton,FacebookIcon,FacebookMessengerShareButton,FacebookMessengerIcon,WhatsappShareButton,WhatsappIcon,TwitterShareButton,TwitterIcon,TelegramShareButton,TelegramIcon} from 'react-share';
 
-import Link from 'next/link';
-const National = ({Data,National}) => {
-  const router = useRouter();
-const {bdNewsDataDiv,setBdNewsDataDiv,setCopied,Loading,directSumData,setDirectSumData,setDirectsumInput,clear} = useResultContext();
 
 
-    const [divText,setDivText] = useState('');
-    const handleCopy = () => {
-      setCopied(true)
-      router.push('/Summarize')
-    }
-  
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        router.push(`/BDnews/Divisional/${divText}`);
-        
-    }
-    useEffect(()=>{
-      if(clear){
-        setDirectSumData(null)
-      }
-  },[clear])
-  
-  
-    setBdNewsDataDiv(Data)
 
+
+
+const Category= ({Data}) => {
+    const {bdNewsDataCat, setBdNewsDataCat,setSumText,setDirectsumInput,directSumData,setDirectSumData,clear,Loading} = useResultContext();
+    const [bdCat,setBdCat] = useState('news');
+    const [passData,setPassData] = useState('');
+    
    
-         {/* Pagination algo*/}
+    const router = useRouter();
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      router.push(`/BDnews/Categorical/${bdCat}`);
+
+    }
+    const handleCopy = () => {
+      
+      router.push('/Summarize')
+      
+    }
+    
+   useEffect(() => {
+  
+      setSumText(passData)
+    
+   },[passData])
+  
+   useEffect(()=>{
+    if(clear){
+      setDirectSumData(null)
+    }
+},[clear])
+
+    
+
+    setBdNewsDataCat(Data);
+
+
+     {/* Pagination algo*/}
 const [currentPage, setCurrentPage] = useState(1);
-const [postsPerPage] = useState(8);
+const [postsPerPage] = useState(10);
 
 const indexOfLastPost = currentPage * postsPerPage;
 const indexOfFirstPost = indexOfLastPost - postsPerPage;
-const paginatedData = bdNewsDataDiv.slice(indexOfFirstPost, indexOfLastPost);
+const paginatedData = bdNewsDataCat.slice(indexOfFirstPost, indexOfLastPost);
 
 const paginate = pageNumber => setCurrentPage(pageNumber);
     
-
   return (
-    <>
-       <Head>
-      <title>BD News || Divisional </title>
-      <meta name="description" content="Get Division wise News Of Bangladesh from the reputed English Newspaper of the country and summarize them in seconds with our summarizer tool..."/>
-      <meta name="keywords" content="Bangladesh news,Bangladesh division news,bd division news, Bangla News,BD News,NewsBd,bangladesh english news, bangladesh english newspaper,english newspaper bangladesh,summary,summarize news,all bangladesh english news"/>
+    <div className='maindiv'>
+      <Head>
+      <title>National Media </title>
+      <meta name="description" content="News from the English newspapers of Bangladesh in one place.Also,Summarize them in one click."/>
+      <meta name="keywords" content="Bangladesh news, Bangla News,BD News,NewsBd,bangladesh english news, bangladesh english newspaper,english newspaper bangladesh,summary,summarize news,all bangladesh english news"/>
       <meta name="author" content="Nuren Shams Chowdhury"/>
       </Head>
-      <div className=' mt-3 row '>
+      
+      <div className='selectSticky'>
+      <div className='row '>
         <div className=' col-md-12'> 
+       
         <div className=''>
         <span className='btn btn-matt m-3 float-left' onClick={() => router.back()}><FaArrowAltCircleLeft/></span>
 
           <h2 className='mainpagetitle d-flex justify-content-center align-items-center'>
-            Division wise news of bangladesh from local english news media 
+             English News From Bangladesh National Media 
+
           </h2>
         </div>
         </div>
       </div>
-     
-      <div className='select rounded'>
-      <div className='row'>
-            <div className='col-md-12'>
-      <div className='b-block'>
-        <div className='m-2'>
-        
-        <h6 className='selecttitle d-flex justify-content-center align-items-center mb-4 mt-3'>Change the Division to see top news of last Week</h6>
-        <form className=' d-flex justify-content-center align-items-center' onSubmit={handleSubmit}>
-            <label className='d-block'>
-            <div className='optiontitle mb-3 '>Select the category   <IconContext.Provider value={{className:"fa-bounce"}}> <FaAngleDown/></IconContext.Provider> </div>
-            <select className=' option rounded' value={divText} onChange={(e) => setDivText(e.target.value)}>
-            <option value='Dhaka'>Dhaka</option>
-            <option value='Chittagong'>Chottogram</option>
-            <option value='Khulna'>Khulna</option>
-            <option value='Rajshahi'>Rajshahi</option>
-            <option value='Barisal'>Barishal</option>
-            <option value='Sylhet'>Sylhet</option>
-            <option value='Mymensingh'>Mymensingh</option>
-            <option value='Rangpur'>Rangpur</option>
-            <option value='Noakhali'>Noakhali</option>
-            
-            </select>
-          <button className='btn selectbutton btn-light' type='submit'>Submit</button>
-
-
-            </label>
-       
-
-        </form>
-        </div>
-        
-          </div>
-      </div>
       
-            </div>
+   
+      
+
       </div>
      
 
-      <div className='pagenamecard rounded'>
-      <div className=''>
-        <p className='d-flex justify-content-center align-items-center  pagenametitle'>Current Division</p>
-        <div className=''>
-        <div className='d-flex justify-content-center align-items-center'>
 
-        <h1 className='pagename'>{National.toUpperCase()}</h1>
-        </div>
-       </div>
-      </div>
-
-      </div>
-   
-
-      {
+     
+     {
       Loading ? <h1 className='modu'><LoAding/></h1> : <div></div>
      }
-      
-        
       
       {
           directSumData && <Summary directSumData={directSumData} />
         }
-    
-      <div className='bdNatSecond'>
-
-   
+       
+      
      
-      <div className=' container-fluid  ' >
+      
+        
+          <div className=' container-fluid  ' >
       <div className='row col-md-12 col-12'>
 
           {
@@ -219,10 +188,10 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
     </div>
   
           </div>
-      
+         
       <hr className='text-muted'/>
 
-   <div className='col-md-12'>
+          <div className='col-md-12'>
                         <div className='pagination mt-3 d-flex justify-content-center mt-3 align-items-center'>
                 <Pagination
                      postsPerPage={postsPerPage}
@@ -233,48 +202,43 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                 </div>
 
                         </div>
-                        <hr className='text-muted' />
                      
+        
       
-
-     
-      </div>
-
-       
-    </>
+      
+    </div>
   )
 }
 
+export default Category
 
-export default National
 
+export async function getServerSideProps() {
+   
+    const res =await axios({
+        method: 'GET',
+        url: 'https://newscatcher.p.rapidapi.com/v1/search',
+        params: {
+          q: 'Bangladesh News',
+          lang: 'en',
+          sort_by: 'date',
+          country: 'BD',
+          topic: `news`,
+          media: 'True',
+          sources: 'dhakatribune.com,thedailystar.net,tbsnews.net,thefinancialexpress.com.bd,daily-sun.com,observerbd.com,bdnews24.com,business-standard.com,risingbd.com,en.prothomalo.com,dhakapost.com'
+        },
+        headers: {
+          'X-RapidAPI-Key': '0ea5875e08msh2ec564c6381f6e8p10c302jsn3dbc1337386d',
+          'X-RapidAPI-Host': 'newscatcher.p.rapidapi.com',
+          'cache-control' : 'no-cache',
+          'pragma' : 'no-cache',
+          'expires' : '0'
+        }
 
-export async function getServerSideProps(context) {
-    const {params} = context
-    const {National} = params 
-    const res = await axios({
-      method: 'GET',
-      url: 'https://newscatcher.p.rapidapi.com/v1/search',
-      params: {
-        q: `${National}`,
-        lang: 'en',
-        sort_by: 'date',
-        country: 'BD',
-        sources: 'dhakatribune.com,thedailystar.net,tbsnews.net,thefinancialexpress.com.bd,daily-sun.com,observerbd.com,bdnews24.com,business-standard.com,risingbd.com,en.prothomalo.com,dhakapost.com',
-        
-        media: 'True'
-      },
-      headers: {
-        'X-RapidAPI-Key': '35e963e80bmsh91a17eb329bdacap11ef20jsn978398e6e697',
-        'X-RapidAPI-Host': 'newscatcher.p.rapidapi.com'
-      }
-  
-      })
-      
-      const data = res.data.articles;
-      
-    return {
-      props: {Data : data, National},
+    })
+    const Data = res.data.articles;
+    return{
+        props : {Data },
+
     }
-  }
-
+}

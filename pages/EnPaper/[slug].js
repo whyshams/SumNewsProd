@@ -7,14 +7,13 @@ import {FacebookShareButton,FacebookIcon,FacebookMessengerShareButton,FacebookMe
 import {FaArrowAltCircleLeft,FaHome} from 'react-icons/fa';
 
 const Slug = ({body,title,description}) => {
-const [href,setHref] = useState([])
+  const [href,setHref] = useState([])
   
   const router = useRouter();
   
- useEffect(() => {
-    setHref(window.location.href)
- },[])
-
+  useEffect(() => {
+     setHref(window.location.href)
+  },[])
   useEffect(() => {
     window.scrollTo({
         top:200,
@@ -27,7 +26,7 @@ const [href,setHref] = useState([])
     <div>
       <Head>
         <title>{title}</title>
-        <meta name='title' content={title}/>
+        <meta name='title' content={title} />
         <meta name='description' content={description}/>
       </Head>
       <div className='d-flex justify-content-center align-items-center'>
@@ -52,7 +51,7 @@ const [href,setHref] = useState([])
                                 <FacebookMessengerShareButton url={href} appId='611096880759273'><FacebookMessengerIcon/></FacebookMessengerShareButton>              
                                 <WhatsappShareButton url={href} title={`${description}`}><WhatsappIcon/></WhatsappShareButton>
                                 <TwitterShareButton url={href} title={`${description}`} ><TwitterIcon/></TwitterShareButton>
-                                <TelegramShareButton url={href} title={`${description}`}><TelegramIcon/></TelegramShareButton>
+                                <TelegramShareButton url={href} title={`TITLE : ${description}`}><TelegramIcon/></TelegramShareButton>
                                 </div>
                             </div>
      </div>
@@ -66,7 +65,7 @@ export async function getServerSideProps(context){
     const {slug} = params
    
 
-    const query = encodeURIComponent(`*[_type == "banglapaper" && slug.current == "${slug}"]`)
+    const query = encodeURIComponent(`*[_type == "englishpaper" && slug.current == "${slug}"]`)
    const res= await fetch(`https://jj3j3gmk.api.sanity.io/v2021-10-21/data/query/production?query=${query}
    `,{cache:"no-store"}).then(d => d.json())
 
@@ -74,10 +73,7 @@ export async function getServerSideProps(context){
     props:{
         body : res.result[0].body,
         title : res.result[0].title,
-        description : res.result[0].description,
-
-
-
+        description : res.result[0].title
 
     }
    }
