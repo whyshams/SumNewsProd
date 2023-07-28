@@ -1,34 +1,5 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Sumnews is an innovative AI-based news aggregator project focused on Bangladesh. It gathers news from the country's most trusted sources, providing users with a comprehensive overview. With the help of TLDR AI, users can effortlessly summarize these news articles into concise paragraphs, ensuring they receive all the essential information in a single click. Additionally, Sumnews offers a seamless browsing experience by allowing users to access renowned Bangladeshi newspapers' websites directly from the Sumnewsbd.com platform, eliminating the need to navigate elsewhere.
 
-## Getting Started
+Built as a Progressive Web App (PWA), Sumnews can be installed and utilized as a mobile application, enabling users to stay up to date with the latest news on the go. The project utilizes technologies such as React JS and Next JS for efficient front-end development. It also leverages Google and Bing News APIs for news aggregation, TLDR AI for summarization, and Sanity IO as the content management system (CMS) for seamless content management.
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#Please Visit : https://sumnewsprod.vercel.app/ (as API limit may exceed in Sumnewsbd.com)
